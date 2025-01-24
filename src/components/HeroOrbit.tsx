@@ -10,7 +10,7 @@ export const HeroOrbit = ({ children, size, rotation }: PropsWithChildren<{ size
                     width: `${size}px`,
                     height: `${size}px`
                 }}>
-                    <div className="inline-flex animate-pulse [animation-duration: 1s]"
+                    <div className="inline-flex animate-float [animation-duration: .2s]"
                     style={{
                         transform: `rotate(${rotation * -1}deg)`
                     }}

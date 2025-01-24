@@ -3,7 +3,9 @@ import heroImage from '@/assets/images/hero.png'
 import ArrowDown from '@/assets/icons/arrow-down.svg'
 import grainImage from '@/assets/images/grain.jpg'
 import { HeroOrbit } from "@/components/HeroOrbit";
-import JavaScript from '@/assets/icons/js.svg'
+import Spark from '@/assets/icons/sparkle.svg'
+import Star3 from '@/assets/icons/star.svg'
+
 
 export const HeroSection = () => {
     return (
@@ -19,7 +21,27 @@ export const HeroSection = () => {
             <div className="size-[1220px] hero-ring"></div>
 
             <HeroOrbit size={800} rotation={-75}>
-                <JavaScript className="size-16"/>
+                <Star3 className="size-28"/>
+            </HeroOrbit>
+
+            <HeroOrbit size={550} rotation={20}>
+                <Star3 className="size-12 text-white/60"/>
+            </HeroOrbit>
+
+            <HeroOrbit size={590} rotation={98}>
+                <Star3 className="size-8"/>
+            </HeroOrbit>
+
+            <HeroOrbit size={430} rotation={-14}>
+                <Spark className="size-8 text-white/40"/>
+            </HeroOrbit>
+
+            <HeroOrbit size={440} rotation={80}>
+                <Spark className="size-10 text-white/50"/>
+            </HeroOrbit>
+
+            <HeroOrbit size={530} rotation={180}>
+                <Spark className="size-8 text-white/10"/>
             </HeroOrbit>
 
             <div className="container">
