@@ -10,3 +10,33 @@
         @apply absolute inset-0  border-2 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full shadow-[0_0_80px_inset] shadow-white/5 border-white/5;
     }
 }
+
+@keyframes changeColor {
+    0% {
+      fill: #505fff;
+    }
+    25% {
+      fill: #c664ed;
+    }
+    50% {
+      fill: #ff69b4;
+    }
+    75% {
+      fill: #ff0062;
+    }
+    100% {
+      fill: #5085ff;
+    }
+}
+
+@keyframes glow {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
+  }
+  50% {
+    filter: drop-shadow(0 0 25px rgb(180, 180, 180));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
+  }
+}
