@@ -5,44 +5,53 @@ import grainImage from "@/assets/images/grain.jpg"
 const portfolioProjects = [
   {
     company: "Promotion Immobilière DAOUD KAMEL",
-    year: "2024",
-    title: "Landing Page",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa eius itaque ullam rerum amet! Ab.",
+    description: "Landing page show cases 'Promotion Immobilière DAOUD KAMEL' (A real estate agency based in Bouira) and It's services.",
     results: [
       { title: "HTML" },
       { title: "CSS" },
       { title: "React Js" },
       { title: "Tailwindcss" },
     ],
-    link: "/contact",
-    image: '/pdk.jpg',
+    link: "https://promotiondaoudkamel.com/",
+    image: '/projects/dk.jpg',
   },
   {
-    company: "Innovative Co",
-    year: "2021",
-    title: "Light Saas Landing Page",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa eius itaque ullam rerum amet! Ab.",
+    company: "Ose it",
+    description: "An early version of the landing page of Ose it, (A center that offers courses for kids in new technologies)",
     results: [
-      { title: "Boosted sales by 20%" },
-      { title: "Expanded customer reach by 35%" },
-      { title: "Increased brand awareness by 15%" },
+      { title: "HTML" },
+      { title: "CSS" },
+      { title: "React Js" },
+      { title: "Tailwindcss" }
     ],
-    link: "https://youtu.be/7hi5zwO75yc",
-    image: '/pdk.jpg',
+    link: "https://ose-it-v1.vercel.app/",
+    image: '/projects/oseit.jpg',
   },
   {
-    company: "Quantum Dynamics",
-    year: "2023",
-    title: "AI Startup Landing Page",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa eius itaque ullam rerum amet! Ab.",
+    company: "ambully",
+    description: "My entry with the CtrlAltDel_Team in the MicroClub hackathon, Its an application that connects police and health departement in urgent cases.",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      { title: "React Js" },
+      { title: "Tailwindcss" },
+      { title: "Next Js" },
+      { title: "Node Js" },
+      { title: "Express js" },
+      { title: "MongoDB" },
     ],
-    link: "https://youtu.be/Z7I5uSRHMHg",
-    image: '/pdk.jpg',
+    link: "https://emergify.vercel.app/",
+    image: '/projects/ambully.jpg',
 
+  },
+  {
+    company: "SEDJELNI",
+    description: "A small software that I made to solve the problem of tickets and long waiting lines in Algeria, Made it in 2021",
+    results: [
+      { title: "HTML" },
+      { title: "CSS" },
+      { title: "jQuery" },
+    ],
+    link: "https://sedjelni.vercel.app/Sedjelni.html",
+    image: '/projects/sedjelni.png',
   },
 ];
 
@@ -82,15 +91,15 @@ export const ProjectsSection = () => {
                                     ))}
                                 </ul>
 
-                                <Link href={item.link} className="relative z-[99]">
-                                    <button className="bg-white text-gray-900 h-10 rounded-xl w-full md:w-auto md:px-8 flex items-center justify-center gap-2 text-sm">
+                                <Link href={item.link} target="_blank" className="relative z-[99]">
+                                    <button className="bg-white text-gray-900 h-10 rounded-xl w-full md:w-auto md:px-8 flex items-center justify-center gap-2 text-sm hover:opacity-70 [transition:0.5s_all]">
                                       Visit Website
                                       <MdKeyboardDoubleArrowRight size={20} />
                                     </button>
                                 </Link>
                                 </div>
                                 <div className="md:pt-14 relative z-[99]">
-                                  <img src={item.image} className="rounded-t-[20px] h-full md:mb-0 -mb-4 mt-8" alt="test" />
+                                  <img src={item.image} className="rounded-t-[20px] mb-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none md:mb-0 lg:mt-0 mt-8" alt="test" />
                                 </div>
                                 </div >
                             </div>
