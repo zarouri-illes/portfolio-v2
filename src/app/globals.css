@@ -11,6 +11,12 @@
     }
 }
 
+@layer utlilities {
+  .container {
+    @apply lg:max-w-5xl
+  }
+}
+
 @keyframes changeColor {
     0% {
       fill: #505fff;

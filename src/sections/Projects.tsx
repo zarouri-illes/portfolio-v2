@@ -14,7 +14,7 @@ const portfolioProjects = [
       { title: "React Js" },
       { title: "Tailwindcss" },
     ],
-    link: "#",
+    link: "/contact",
     image: '/pdk.jpg',
   },
   {
@@ -48,7 +48,7 @@ const portfolioProjects = [
 
 export const ProjectsSection = () => {
     return (
-        <section className="pb-16">
+        <section className="pb-16 lg:py-24">
             <div className="container">
                 <p></p>
                 <h2 className="font-serif text-3xl text-center">Featured Projects</h2>
@@ -56,20 +56,24 @@ export const ProjectsSection = () => {
                 <div className="flex flex-col gap-20 mt-10 md:mt-16">
                     {
                         portfolioProjects.map((item, id) => (
-                            <div className="bg-gray-800 after:rounded-t-3xl relative after:content-[''] after:absolute after:inset-0 after:z-10 rounded-t-[20px] overflow-hidden after:outline after:outline-2 after:outline-offset-2 after:outline-white/20 px-8" key={id}>
-                              <div className="absolute inset-0 z-10 opacity-5"
+                            <div className="bg-gray-700/55 relative rounded-[20px] overflow-hidden border-[1px] border-white/20 outline-white pb-0 md:pb-8 px-10" key={id}>
+                              <div className="absolute opacity-0 inset-0 z-[99]"
                                 style={{
                                   backgroundImage: `url(${grainImage.src})`
                                 }}
                               ></div>
-                                <div className="iniline-flex font-bold uppercase z-20 tracking-widest text-sm gap-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-sky-400 py-8">
-                                    <span className="font-sans text-md lg:text-2xl mt-2">{item.company}</span>
+                              <div className="lg:grid lg:grid-cols-2">
+                                <div>
+                                <div className="iniline-flex z-[99] font-bold uppercase relative tracking-widest text-sm gap-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-sky-400 py-8">
+                                    <span className="font-sans text-md lg:text-xl mt-2">{item.company}</span>
                                 </div>
-                                <hr className="border-t border-white/5 z-20"/>
-                                <div className="pt-8 text-gray-400 font-light">
+
+                                <div className="text-gray-400 pb-8 text-sm pr-6 font-light relative z-[99]">
                                   <p>{item.description}</p>
                                 </div>
-                                <ul className="py-8 flex gap-2 flex-col ">
+                                <hr className="border-t border-white/50 z-20"/>
+                                
+                                <ul className="py-8 flex gap-2 flex-col relative z-[99] ">
                                     {item.results.map((list, id) => (
                                         <li key={id} className="flex items-center gap-2 justify-start">
                                           <CheckIcon className="size-4 text-white animate-[changeColor_5s_infinite]" />
@@ -77,15 +81,18 @@ export const ProjectsSection = () => {
                                         </li>
                                     ))}
                                 </ul>
-                                <Link href={item.link}>
-                                    <button className="bg-white z-[99] text-gray-900 h-10 rounded-xl w-full md:w-auto md:px-8 flex items-center justify-center gap-2 text-sm">
+
+                                <Link href={item.link} className="relative z-[99]">
+                                    <button className="bg-white text-gray-900 h-10 rounded-xl w-full md:w-auto md:px-8 flex items-center justify-center gap-2 text-sm">
                                       Visit Website
                                       <MdKeyboardDoubleArrowRight size={20} />
                                     </button>
                                 </Link>
-                                <div className="pt-4 z-[99]">
-                                  <img src={item.image} className="rounded-t-[20px] h-[200px] md:h-full -mb-4 mt-4" alt="test" />
                                 </div>
+                                <div className="md:pt-14 relative z-[99]">
+                                  <img src={item.image} className="rounded-t-[20px] h-full md:mb-0 -mb-4 mt-8" alt="test" />
+                                </div>
+                                </div >
                             </div>
                         ))
                     }
