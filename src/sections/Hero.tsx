@@ -1,9 +1,10 @@
 import Image from "next/image";
 import heroImage from '@/assets/images/hero.png'
-import grainImage from '@/assets/images/grain.jpg'
+import { FaGithub, FaLinkedin  } from "react-icons/fa";
 import { HeroOrbit } from "@/components/HeroOrbit";
 import Spark from '@/assets/icons/sparkle.svg'
 import Star3 from '@/assets/icons/star.svg'
+import Link from "next/link";
 
 
 export const HeroSection = () => {
@@ -56,8 +57,15 @@ export const HeroSection = () => {
                     />
                 </div>
                 <div className="max-w-lg mx-auto">
-                    <h1 className="font-serif text-4xl md:text-5xl text-center mt-8 tracking-wide">Front-end Developer & Designer</h1>
-                    <p className="font-light mt-4 md:text-lg text-white/90 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit provident ipsa asperiores quia! Incidunt, fugit?</p>
+                    <h1 className="font-serif text-4xl md:text-4xl text-center mt-8 tracking-wide">Zarouri Illes<br /> Front-end Developer</h1>
+                    <div className="pt-8 flex items-center gap-6 justify-center">
+                        <Link href="https://github.com/zarouri-illes" target="_blank" className="flex items-center justify-center gap-2">
+                            <FaGithub size={40} className="animate-[glow_5s_infinite]"/>
+                        </Link>
+                        <Link href="https://www.linkedin.com/in/zarouri-illes-9a9640296/" target="_blank" className="flex items-center justify-center gap-2">
+                            <FaLinkedin size={40} className="animate-[glow_5s_infinite]"/>
+                        </Link>
+                    </div>
                 </div>
                 <div className="flex flex-col items-center justify-center mt-8">
                     <a href="#_" className="relative p-0.5 inline-flex items-center justify-center font-bold overflow-hidden group rounded-md">
