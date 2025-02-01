@@ -62,10 +62,10 @@ export const ProjectsSection = () => {
                 <p></p>
                 <h2 className="font-serif text-3xl text-center">Featured Projects</h2>
                 
-                <div className="flex flex-col gap-20 mt-10 md:mt-16">
+                <div className="flex flex-col gap-20 mt-10 md:mt-16 scroll-smooth">
                     {
                         portfolioProjects.map((item, id) => (
-                            <div className="bg-gray-700/55 relative rounded-[20px] overflow-hidden border-[1px] border-white/20 outline-white pb-0 md:pb-8 px-10" key={id}>
+                            <div className="bg-gray-700 top-0 rounded-[20px] overflow-hidden border-[1px] border-white/20 outline-white pb-0 md:pb-8 px-10 sticky" key={id}>
                               <div className="absolute opacity-0 inset-0 z-[99]"
                                 style={{
                                   backgroundImage: `url(${grainImage.src})`
