@@ -57,7 +57,7 @@ export const HeroSection = () => {
                     />
                 </div>
                 <div className="max-w-lg mx-auto">
-                    <h1 className="font-serif text-4xl md:text-4xl text-center mt-8 tracking-wide">Zarouri Illes<br /> Front-end Developer</h1>
+                    <h1 className="font-serif text-4xl md:text-4xl text-center mt-8 tracking-wide">Zarouri Illes<br /> Full Stack Developer</h1>
                     <div className="pt-8 flex items-center gap-6 justify-center">
                         <Link href="https://github.com/zarouri-illes" target="_blank" className="flex items-center justify-center gap-2">
                             <FaGithub size={40} className="animate-[glow_5s_infinite]"/>
