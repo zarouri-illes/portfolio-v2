@@ -1,5 +1,3 @@
-
-
 const tech = [
     {
         title: "HTML",
@@ -34,6 +32,10 @@ const tech = [
         icon:"/icons/express.svg",
     },
     {
+        title: "PostgreSQL",
+        icon:"/icons/post.svg",
+    },
+    {
         title: "MongoDB",
         icon:"/icons/mongo.svg",
     },
@@ -48,9 +50,9 @@ export const Tech = () => {
                 <div className="py-10">
                     <div className="flex items-center justify-center gap-6 md:gap-10 flex-wrap">
                         {tech.map((item, id) => (
-                            <div key={id} className="flex flex-col items-center justify-center gap-2">
-                                <img src={item.icon} className="w-[50px]" alt="" />
-                                <h3>{item.title}</h3>
+                            <div key={id} className="flex flex-col items-center justify-center gap-3">
+                                <img src={item.icon} className="w-[50px] hover:-translate-y-4 transition-all duration-300" alt="" />
+                                <h3 className="font-light text-white/70">{item.title}</h3>
                             </div>
                         ))}
                     </div>
