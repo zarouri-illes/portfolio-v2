@@ -1,8 +1,9 @@
 import { Footer } from "@/sections/Footer";
 import { Header } from "@/sections/Header";
+import { Tech } from "@/sections/Tech";
 import { HeroSection } from "@/sections/Hero";
 import { ProjectsSection } from "@/sections/Projects";
-import { Tech } from "@/sections/Tech";
+
 
 export default function Home() {
   return (
