@@ -64,7 +64,7 @@ const portfolioProjects = [
       { title: "jQuery" },
     ],
     link: "https://sedjelni.vercel.app/Sedjelni.html",
-    image: '/projects/sedjelni.png',
+    image: '/projects/sedjelni.PNG',
   },
 ];
 
