@@ -43,6 +43,19 @@ const portfolioProjects = [
 
   },
   {
+    company: "EduAccess",
+    description: "My entry with the CtrlAltDel_Team in the MicroClub hackathon, Its an application that connects police and health departement in urgent cases.",
+    results: [
+      { title: "HTML" },
+      { title: "CSS" },
+      { title: "React Js" },
+      { title: "Tailwindcss" },
+    ],
+    link: "https://edu-access.vercel.app/",
+    image: '/projects/edd.jpg',
+
+  },
+  {
     company: "SEDJELNI",
     description: "A small software that I made to solve the problem of tickets and long waiting lines in Algeria, Made it in 2021",
     results: [
