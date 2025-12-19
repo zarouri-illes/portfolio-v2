@@ -25,7 +25,7 @@ const portfolioProjects = [
       { title: "Tailwindcss" }
     ],
     link: "https://ose-it-v1.vercel.app/",
-    image: '/projects/oseit.jpg',
+    image: '/projects/oseit.JPG',
   },
   {
     company: "ambully",
@@ -39,7 +39,7 @@ const portfolioProjects = [
       { title: "MongoDB" },
     ],
     link: "https://emergify.vercel.app/",
-    image: '/projects/ambully.jpg',
+    image: '/projects/ambully.JPG',
 
   },
   {
@@ -52,7 +52,7 @@ const portfolioProjects = [
       { title: "Tailwindcss" },
     ],
     link: "https://edu-access.vercel.app/",
-    image: '/projects/edd.jpg',
+    image: '/projects/edd.JPG',
 
   },
   {
