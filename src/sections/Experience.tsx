@@ -22,9 +22,11 @@ export const Experience = () => {
                         </div>
                         <ul className="text-gray-300 text-[14px] md:text-[15px] font-light leading-relaxed list-disc list-outside ml-4 space-y-2">
                             <li>Developed a real estate management platform from the ground up, implementing residence and apartment management systems, and database architecture.</li>
+                            <li>Built BacPrep Hub, a full-stack educational platform with interactive quizzes, dynamic performance tracking, Gemini AI chatbot support, and Chargily Pay SDK payment flows.</li>
+                            <li>Created hackathon and civic-tech applications including an emergency coordination platform connecting police and health departments, plus ticketing and queue-management concepts for Algerian users.</li>
                             <li>Engineered role-based authentication/authorization, RESTful APIs, custom routing strategies, and administrative dashboards.</li>
-                            <li>Executed database modeling in both NoSQL and relational environments (MongoDB, Mongoose, and PostgreSQL).</li>
-                            <li>Translated business needs into technical solutions using React, Next.js, Node.js, Express.js, TypeScript, and Git-based version control workflows.</li>
+                            <li>Executed database modeling in both NoSQL and relational environments using MongoDB, Mongoose, PostgreSQL, and Prisma ORM.</li>
+                            <li>Translated business needs into technical solutions using React, Next.js, Node.js, Express.js, TypeScript, Tailwind CSS, Framer Motion, and Git-based version control workflows.</li>
                             <li>Architected AI-powered business tools, including WhatsApp customer support automation and SaaS dashboard designs.</li>
                         </ul>
                     </div>
@@ -38,6 +40,7 @@ export const Experience = () => {
                         </div>
                         <ul className="text-gray-300 text-[14px] md:text-[15px] font-light leading-relaxed list-disc list-outside ml-4 space-y-2">
                             <li>Managed digital content and structured modern marketing funnels for a real estate agency.</li>
+                            <li>Designed and launched the agency landing page to present Promotion Immobilière DAOUD KAMEL, its services, and its brand online.</li>
                             <li>Created promotional campaigns and managed daily social media content systems.</li>
                         </ul>
                     </div>
@@ -51,6 +54,7 @@ export const Experience = () => {
                         </div>
                         <ul className="text-gray-300 text-[14px] md:text-[15px] font-light leading-relaxed list-disc list-outside ml-4 space-y-2">
                             <li>Mentored children in new technologies, programming basics, and digital literacy at Ose It.</li>
+                            <li>Built an early landing page for Ose It to communicate its technology courses for children.</li>
                             <li>Designed curriculum and hands-on workshops to introduce kids to coding and tech skills.</li>
                             <li>Instructed and supervised children, building foundational soft skills.</li>
                             <li>Developed strong communication, mentoring, leadership, and problem-solving skills.</li>
