@@ -6,7 +6,7 @@ export const HeroSection = () => {
         <section id="home" className="pt-16 md:pt-24 pb-16 px-6 md:px-16 lg:px-64 w-full">
             <div className="flex flex-col items-start text-left max-w-2xl mx-auto md:mx-0">
                 <h1 className="font-sans font-bold text-3xl sm:text-4xl md:text-5xl lg:text-[42px] tracking-tight text-white mb-6">
-                    Hey, I'm <span className="text-[#3E70C9]">Zarouri Illes</span>!
+                    Hey, I&apos;m <span className="text-[#3E70C9]">Zarouri Illes</span>!
                 </h1>
 
                 <div className="text-gray-300 text-sm sm:text-base md:text-lg font-light leading-relaxed mb-6">
