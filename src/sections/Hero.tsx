@@ -1,81 +1,46 @@
-import Image from "next/image";
-import heroImage from '@/assets/images/hero.png'
-import { FaGithub, FaLinkedin  } from "react-icons/fa";
-import { HeroOrbit } from "@/components/HeroOrbit";
-import Spark from '@/assets/icons/sparkle.svg'
-import Star3 from '@/assets/icons/star.svg'
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
-
 
 export const HeroSection = () => {
     return (
-        <div className="py-32 md:py-48 lg:py-60 relative z-0 overflow-x-clip">
-            <div className="inset-0 absolute [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_70%,transparent)]">
-           
+        <section id="home" className="pt-16 md:pt-24 pb-16 px-6 md:px-16 lg:px-64 w-full">
+            <div className="flex flex-col items-start text-left max-w-2xl mx-auto md:mx-0">
+                <h1 className="font-sans font-bold text-3xl sm:text-4xl md:text-5xl lg:text-[42px] tracking-tight text-white mb-6">
+                    Hey, I'm <span className="text-[#3E70C9]">Zarouri Illes</span>!
+                </h1>
 
-            <div className="size-[620px] hero-ring"></div>
-            <div className="size-[820px] hero-ring"></div>
-            <div className="size-[1020px] hero-ring"></div>
-            <div className="size-[1220px] hero-ring"></div>
-
-            <HeroOrbit size={800} rotation={-75}>
-                <Star3 className="size-28 animate-[glow_5s_infinite]"/>
-            </HeroOrbit>
-
-            <HeroOrbit size={550} rotation={20}>
-                <Star3 className="size-12 animate-[glow_5s_infinite]"/>
-            </HeroOrbit>
-
-            <HeroOrbit size={590} rotation={98}>
-                <Star3 className="size-8 animate-[glow_5s_infinite]"/>
-            </HeroOrbit>
-
-            <HeroOrbit size={430} rotation={-14}>
-                <Spark className="size-8 text-pink-500 animate-[glow_5s_infinite]"/>
-            </HeroOrbit>
-
-            <HeroOrbit size={440} rotation={80}>
-                <Spark className="size-10 text-purple-500 animate-[glow_5s_infinite]"/>
-            </HeroOrbit>
-
-            <HeroOrbit size={530} rotation={180}>
-                <Spark className="size-10 text-sky-500 animate-[glow_5s_infinite]"/>
-            </HeroOrbit>
-
-            <HeroOrbit size={710} rotation={114}>
-                <Spark className="size-14 text-pink-500 animate-[glow_5s_infinite]"/>
-            </HeroOrbit>
-            </div>
-            
-
-            <div className="container">
-                <div className="flex flex-col items-center">
-                    <Image
-                        className="size-[100px]"
-                        src={heroImage}
-                        alt="Zarouri Illes"
-                    />
+                <div className="text-gray-300 text-sm sm:text-base md:text-lg font-light leading-relaxed mb-6">
+                    <p className="mb-2">A Full Stack Developer combining aesthetics and technical structure.</p>
+                    <p>I specialize in building applications using modern frameworks including Next.js, React, Node, and more.</p>
                 </div>
-                <div className="max-w-lg mx-auto">
-                    <h1 className="font-serif text-4xl md:text-4xl text-center mt-8 tracking-wide">Zarouri Illes<br /> Full Stack Developer</h1>
-                    <div className="pt-8 flex items-center gap-6 justify-center">
-                        <Link href="https://github.com/zarouri-illes" target="_blank" className="flex items-center justify-center gap-2">
-                            <FaGithub size={40} className="animate-[glow_5s_infinite]"/>
+
+                <div className="mb-12">
+                    <div className="w-[150px] h-[3px] bg-[#3E70C9]">
+
+                    </div>
+                </div>
+
+                <div className="mb-10 w-full">
+                    <h3 className="text-white font-bold mb-4 text-sm tracking-wide">Find me on</h3>
+                    <div className="flex flex-wrap items-center gap-6">
+                        <Link href="https://github.com/zarouri-illes" target="_blank" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors">
+                            <FaGithub size={16} />
+                            <span className="text-[13px] font-medium tracking-wide">GitHub</span>
                         </Link>
-                        <Link href="https://www.linkedin.com/in/zarouri-illes-9a9640296/" target="_blank" className="flex items-center justify-center gap-2">
-                            <FaLinkedin size={40} className="animate-[glow_5s_infinite]"/>
+                        <Link href="https://www.linkedin.com/in/zarouri-illes-9a9640296/" target="_blank" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors">
+                            <FaLinkedin size={16} />
+                            <span className="text-[13px] font-medium tracking-wide">LinkedIn</span>
                         </Link>
                     </div>
                 </div>
-                <div className="flex flex-col items-center justify-center mt-8">
-                    <a href="#_" className="relative p-0.5 inline-flex items-center justify-center font-bold overflow-hidden group rounded-md">
-                        <span className="w-full h-full bg-gradient-to-br from-sky-500 via-pink-500  to-purple-500 group-hover:from-purple-500 group-hover:via-pink-500  group-hover:to-sky-500 absolute"></span>
-                            <span className="relative px-14 py-2 transition-all ease-out bg-gray-700 rounded-md group-hover:bg-opacity-0 duration-400">
-                            <span className="relative text-white font-bold">Check my projects</span>
-                        </span>
-                    </a>
+
+                <div className="w-full">
+                    <h3 className="text-white font-bold mb-3 text-sm tracking-wide">Contact</h3>
+                    <p className="text-gray-300 text-sm md:text-[15px] font-light">
+                        You can reach me out anytime at <a href="mailto:illeszarouri@gmail.com" className="text-white hover:text-gray-200 transition-colors border-b-[1.5px] border-[#3E70C9] font-medium pb-[1px]">illeszarouri@gmail.com</a>
+                    </p>
                 </div>
             </div>
-        </div>
+        </section>
     )
 };

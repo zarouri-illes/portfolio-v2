@@ -1,61 +1,80 @@
+import { FaHtml5, FaCss3Alt, FaReact, FaRust, FaPython, FaNodeJs } from "react-icons/fa";
+import { SiJavascript, SiTailwindcss, SiExpress, SiPostgresql, SiMongodb, SiPostman, SiC } from "react-icons/si";
+
 const tech = [
     {
         title: "HTML",
-        icon: "/icons/html.svg",
+        icon: FaHtml5,
     },
     {
         title: "CSS",
-        icon: "/icons/css.svg",
+        icon: FaCss3Alt,
     },
     {
         title: "Javascript",
-        icon:"/icons/js.svg",
+        icon: SiJavascript,
     },
     {
         title: "Tailwind css",
-        icon:"/icons/tailwindcss.svg",
+        icon: SiTailwindcss,
     },
     {
         title: "Reactjs",
-        icon:"/icons/react.svg",
+        icon: FaReact,
     },
     {
-        title: "Nextjs",
-        icon:"/icons/next.svg",
+        title: "Rust",
+        icon: FaRust,
+    },
+    {
+        title: "Python",
+        icon: FaPython,
     },
     {
         title: "Nodejs",
-        icon:"/icons/node.svg",
+        icon: FaNodeJs,
     },
     {
         title: "Expressjs",
-        icon:"/icons/express.svg",
+        icon: SiExpress,
     },
     {
         title: "PostgreSQL",
-        icon:"/icons/post.svg",
+        icon: SiPostgresql,
     },
     {
         title: "MongoDB",
-        icon:"/icons/mongo.svg",
+        icon: SiMongodb,
+    },
+    {
+        title: "C Lang",
+        icon: SiC,
+    },
+    {
+        title: "Postman",
+        icon: SiPostman,
     },
 ]
 
 export const Tech = () => {
     return (
-        <section className="pt-24 container">
-            <div>
-                <h2 className="font-serif text-3xl text-center">Teck Stack</h2>
+        <section id="tech-stack" className="pt-20 px-6 md:px-16 lg:px-64 w-full">
+            <div className="max-w-2xl mx-auto md:mx-0">
+                <div className="mb-4">
+                    <h2 className="font-sans font-bold text-3xl md:text-[34px] tracking-tight text-white mb-2">Tech Stack</h2>
+                </div>
 
-                <div className="py-10">
-                    <div className="flex items-center justify-center gap-6 md:gap-10 flex-wrap">
-                        {tech.map((item, id) => (
-                            <div key={id} className="flex flex-col items-center justify-center gap-3">
-                                <img src={item.icon} className="w-[50px] hover:-translate-y-4 transition-all duration-300" alt="" />
-                                <h3 className="font-light text-white/70">{item.title}</h3>
+
+                <div className="flex flex-wrap items-center gap-3">
+                    {tech.map((item, id) => {
+                        const IconComponent = item.icon;
+                        return (
+                            <div key={id} className="flex items-center gap-1.5 px-3 py-1.5 bg-[#ffffff0a] border border-[#ffffff15] rounded-full hover:bg-[#ffffff15] transition-colors cursor-pointer select-none">
+                                <IconComponent className="text-[14px] text-[#3E70C9]" />
+                                <span className="text-[12px] sm:text-[13px] text-gray-300 font-medium tracking-wide">{item.title}</span>
                             </div>
-                        ))}
-                    </div>
+                        )
+                    })}
                 </div>
             </div>
         </section>

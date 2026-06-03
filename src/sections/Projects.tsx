@@ -1,8 +1,26 @@
+"use client";
+
+import { useState, useCallback } from "react";
 import Link from "next/link";
-import CheckIcon from "@/assets/icons/check.svg"
+import { HiMiniCodeBracket } from "react-icons/hi2";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
+import { FaGithub, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import grainImage from "@/assets/images/grain.jpg"
+
 const portfolioProjects = [
+  {
+    company: "BacPrep Hub",
+    description: "A full-stack educational web platform offering interactive quiz engines, an AI chatbot powered by Gemini API, and dynamic performance tracking for Algerian Baccalaureate students.",
+    results: [
+      { title: "React, Tailwind CSS & Framer Motion" },
+      { title: "Node.js, PostgreSQL & Prisma ORM" },
+      { title: "Gemini AI Chatbot Integration" },
+      { title: "Chargily Pay SDK (Atomic Transactions)" },
+    ],
+    link: "https://bacprephub.vercel.app/",
+    github: "#",
+    image: '/projects/bacprep.png',
+  },
   {
     company: "Promotion Immobilière DAOUD KAMEL",
     description: "Landing page show cases 'Promotion Immobilière DAOUD KAMEL' (A real estate agency based in Bouira) and It's services.",
@@ -13,6 +31,7 @@ const portfolioProjects = [
       { title: "Tailwindcss" },
     ],
     link: "https://promotiondaoudkamel.com/",
+    github: "#",
     image: '/projects/dk.jpg',
   },
   {
@@ -25,6 +44,7 @@ const portfolioProjects = [
       { title: "Tailwindcss" }
     ],
     link: "https://ose-it-v1.vercel.app/",
+    github: "#",
     image: '/projects/oseit.JPG',
   },
   {
@@ -39,8 +59,8 @@ const portfolioProjects = [
       { title: "MongoDB" },
     ],
     link: "https://emergify.vercel.app/",
+    github: "https://github.com/zarouri-illes/Emergify",
     image: '/projects/ambully.JPG',
-
   },
   {
     company: "EduAccess",
@@ -52,8 +72,8 @@ const portfolioProjects = [
       { title: "Tailwindcss" },
     ],
     link: "https://edu-access.vercel.app/",
+    github: "",
     image: '/projects/edd.JPG',
-
   },
   {
     company: "SEDJELNI",
@@ -64,62 +84,153 @@ const portfolioProjects = [
       { title: "jQuery" },
     ],
     link: "https://sedjelni.vercel.app/Sedjelni.html",
+    github: "https://github.com/zarouri-illes/Sedjelni",
     image: '/projects/sedjelni.PNG',
   },
 ];
 
 export const ProjectsSection = () => {
-    return (
-        <section className="pb-16 lg:py-24">
-            <div className="container">
-                <p></p>
-                <h2 className="font-serif text-3xl text-center">Featured Projects</h2>
-                
-                <div className="flex flex-col gap-20 mt-10 md:mt-16 scroll-smooth">
-                    {
-                        portfolioProjects.map((item, id) => (
-                            <div className="bg-gray-700 top-0 rounded-[20px] overflow-hidden border-[1px] border-white/20 outline-white pb-0 md:pb-8 px-10 sticky" key={id}>
-                              <div className="absolute opacity-0 inset-0 z-[99]"
-                                style={{
-                                  backgroundImage: `url(${grainImage.src})`
-                                }}
-                              ></div>
-                              <div className="lg:grid lg:grid-cols-2">
-                                <div>
-                                <div className="iniline-flex z-[99] font-bold uppercase relative tracking-widest text-sm gap-2 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-sky-400 py-8">
-                                    <span className="font-sans text-md lg:text-xl mt-2">{item.company}</span>
-                                </div>
+  const [current, setCurrent] = useState(0);
+  const [direction, setDirection] = useState<"left" | "right" | null>(null);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const total = portfolioProjects.length;
 
-                                <div className="text-gray-400 pb-8 text-sm pr-6 font-light relative z-[99]">
-                                  <p>{item.description}</p>
-                                </div>
-                                <hr className="border-t border-white/50 z-20"/>
-                                
-                                <ul className="py-8 flex gap-2 flex-col relative z-[99] ">
-                                    {item.results.map((list, id) => (
-                                        <li key={id} className="flex items-center gap-2 justify-start">
-                                          <CheckIcon className="size-4 text-white animate-[changeColor_5s_infinite]" />
-                                          <span className="text-sm">{list.title}</span>
-                                        </li>
-                                    ))}
-                                </ul>
+  const animate = useCallback((newIndex: number, dir: "left" | "right") => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setDirection(dir);
 
-                                <Link href={item.link} target="_blank" className="relative z-[99]">
-                                    <button className="bg-white text-gray-900 h-10 rounded-xl w-full md:w-auto md:px-8 flex items-center justify-center gap-2 text-sm hover:opacity-70 [transition:0.5s_all]">
-                                      Visit Website
-                                      <MdKeyboardDoubleArrowRight size={20} />
-                                    </button>
-                                </Link>
-                                </div>
-                                <div className="md:pt-14 relative z-[99]">
-                                  <img src={item.image} className="rounded-t-[20px] mb-0 lg:absolute lg:h-full lg:w-auto lg:max-w-none md:mb-0 lg:mt-0 mt-8" alt="test" />
-                                </div>
-                                </div >
-                            </div>
-                        ))
-                    }
+    setTimeout(() => {
+      setCurrent(newIndex);
+      setDirection(null);
+      setIsAnimating(false);
+    }, 350);
+  }, [isAnimating]);
+
+  const prev = () => animate(current === 0 ? total - 1 : current - 1, "right");
+  const next = () => animate(current === total - 1 ? 0 : current + 1, "left");
+
+  const item = portfolioProjects[current];
+
+  const slideClass = direction === "left"
+    ? "animate-slide-out-left"
+    : direction === "right"
+      ? "animate-slide-out-right"
+      : "animate-slide-in";
+
+  return (
+    <section id="projects" className="pb-16 lg:py-24 px-4 sm:px-6 md:px-16 lg:px-64 overflow-hidden">
+      <div className="max-w-5xl mx-auto md:mx-0">
+        {/* Header */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 md:mb-14 gap-4">
+          <h2 className="font-sans font-bold text-2xl sm:text-3xl md:text-[34px] tracking-tight text-white">Featured Projects</h2>
+          <div className="flex items-center gap-3">
+            <button onClick={prev} disabled={isAnimating} className="size-10 rounded-full border border-gray-700 flex items-center justify-center text-gray-400 hover:text-white hover:border-[#3E70C9] transition-all duration-300 disabled:opacity-30" aria-label="Previous project">
+              <FaChevronLeft size={14} />
+            </button>
+            <span className="text-gray-500 text-sm font-medium tabular-nums min-w-[40px] text-center select-none">{current + 1} / {total}</span>
+            <button onClick={next} disabled={isAnimating} className="size-10 rounded-full border border-gray-700 flex items-center justify-center text-gray-400 hover:text-white hover:border-[#3E70C9] transition-all duration-300 disabled:opacity-30" aria-label="Next project">
+              <FaChevronRight size={14} />
+            </button>
+          </div>
+        </div>
+
+        {/* Card */}
+        <div className={`relative bg-[#0f1629] rounded-3xl overflow-hidden border border-gray-800 transition-all duration-300 shadow-md min-h-[500px] sm:min-h-[480px] md:min-h-[420px] lg:min-h-[400px] ${slideClass}`}>
+          <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none"
+            style={{ backgroundImage: `url(${grainImage.src})` }}
+          ></div>
+
+          <div className="flex flex-col lg:flex-row gap-6 lg:gap-10 relative z-10 w-full h-full p-5 sm:p-6 md:p-8">
+            {/* Text Content */}
+            <div className="flex-1 flex flex-col justify-between min-h-0">
+              <div>
+                <h3 className="font-bold text-xl sm:text-2xl lg:text-3xl text-[#3E70C9] mb-3 lg:mb-4">
+                  {item.company}
+                </h3>
+                <p className="text-gray-300 text-xs sm:text-sm md:text-base font-light leading-relaxed mb-5 md:mb-6 line-clamp-3">
+                  {item.description}
+                </p>
+
+                <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-5 md:mb-6">
+                  {item.results.map((list, id) => (
+                    <span key={id} className="text-[11px] sm:text-xs md:text-sm px-2 sm:px-3 py-1 sm:py-1.5 bg-white/5 rounded-full border border-white/10 flex items-center gap-1 sm:gap-1.5 text-gray-200">
+                      <HiMiniCodeBracket className="size-2.5 sm:size-3 text-[#3E70C9]" />
+                      {list.title}
+                    </span>
+                  ))}
                 </div>
+              </div>
+
+              <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
+                <Link href={item.link} target="_blank">
+                  <button className="bg-white hover:bg-gray-200 text-gray-900 h-9 sm:h-11 rounded-xl px-5 sm:px-8 flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold transition-all duration-300">
+                    Visit Website
+                    <MdKeyboardDoubleArrowRight size={18} />
+                  </button>
+                </Link>
+                <Link href={item.github} target="_blank">
+                  <button className="bg-transparent hover:bg-white/10 text-white h-9 sm:h-11 rounded-xl px-4 sm:px-6 flex items-center justify-center gap-2 text-xs sm:text-sm font-semibold transition-all duration-300 border border-gray-700 hover:border-[#3E70C9]">
+                    <FaGithub size={16} />
+                    GitHub
+                  </button>
+                </Link>
+              </div>
             </div>
-        </section>
-    );
+
+            {/* Image */}
+            <div className="flex-1 w-full rounded-2xl overflow-hidden h-[200px] sm:h-[220px] lg:h-auto lg:min-h-[280px] relative">
+              <img
+                src={item.image}
+                className="w-full h-full object-cover object-top absolute inset-0 border border-white/10 rounded-2xl"
+                alt={item.company}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Dot indicators */}
+        <div className="flex items-center justify-center gap-2 mt-6">
+          {portfolioProjects.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => {
+                if (i === current || isAnimating) return;
+                animate(i, i > current ? "left" : "right");
+              }}
+              className={`rounded-full transition-all duration-300 ${i === current
+                ? "w-6 h-2 bg-[#3E70C9]"
+                : "size-2 bg-gray-700 hover:bg-gray-500"
+                }`}
+              aria-label={`Go to project ${i + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+
+      <style jsx>{`
+        @keyframes slideOutLeft {
+          from { transform: translateX(0); opacity: 1; }
+          to { transform: translateX(-60px); opacity: 0; }
+        }
+        @keyframes slideOutRight {
+          from { transform: translateX(0); opacity: 1; }
+          to { transform: translateX(60px); opacity: 0; }
+        }
+        @keyframes slideIn {
+          from { transform: translateX(30px); opacity: 0; }
+          to { transform: translateX(0); opacity: 1; }
+        }
+        .animate-slide-out-left {
+          animation: slideOutLeft 0.35s ease-in-out forwards;
+        }
+        .animate-slide-out-right {
+          animation: slideOutRight 0.35s ease-in-out forwards;
+        }
+        .animate-slide-in {
+          animation: slideIn 0.3s ease-out forwards;
+        }
+      `}</style>
+    </section>
+  );
 };
